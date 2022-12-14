@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <title>Le Français Joyeu - Reserveren</title>
+</head>
+<body>
+    <section class="alert" id="js--alert">
+        <p id="js--alertText">Alert</p>
+    </section>
+    <header class="header">
+        <h1>Le Français Joyeu</h1>
+        <a class="skip-nav-link" href="#main">
+            Sla navigatie over
+        </a>
+        <nav class="navigation">
+            <a href="">Home</a>
+            <a href="">Accommodaties</a>
+            <a href="">Beschikbaarheid</a>
+            <a href="">Omgeving</a>
+            <a href="">Contact</a>
+            <a href="">FAQ/Vragen</a>
+            <a href="">Info</a>
+        </nav>
+    </header>
+    <main id="main">
+
+        <h1 class="main-title">Reserveren</h1>
+        <form class="reservation-form" onsubmit="return checkForm()" role="form" aria-label="Formulier om een campingplaats te reserveren">
+            <h2 class="form-title">Persoonlijke Informatie</h2>
+            <section>
+                <label for="voornaam" class="label-required">Voornaam:</label>
+                <input id="voornaam" class="input-required" type="text" maxlength="40" aria-label="Vul hier uw voornaam in. Dit is een verplicht veld">
+                <label for="tussenvoegsel">Tussenvoegsel:</label>
+                <input id="tussenvoegsel" type="text" maxlength="10" aria-label="Vul hier uw tussenvoegsel in als u deze heeft">
+            </section>
+            <section>
+                <label for="achternaam" class="label-required">Achternaam:</label>
+                <input id="achternaam" class="input-required" type="text" maxlength="40" aria-label="Vul hier uw achternaam in. Dit is een verplicht veld">
+                <label for="geslacht" class="label-required">Geslacht:</label>
+                <input id="geslacht" class="input-required" type="text" maxlength="40" placeholder="Man/Vrouw/Anders" aria-label="Vul hier uw geslacht in. Typ man, vrouw of anders. Dit is een verplicht veld">
+            </section>
+
+            <h2 class="form-title">Contact Informatie</h2>
+            <section>
+                <label for="straatnaam" class="label-required">Straatnaam</label>
+                <input id="straatnaam" class="input-required" type="text" maxlength="40" aria-label="Vul hier uw straatnaam in. Verplicht veld">
+                <section class="zipcode">
+                    <label for="postcode" class="label-required">Postcode</label>
+                    <label for="huisnummer" class="label-required">Huisnummer</label>
+                    <input id="postcode" class="input-required" type="text" maxlength="8" aria-label="Vul hier uw postcode in. Dit is een verplicht veld">
+                    <input id="huisnummer" class="input-required" type="text" maxlength="10" aria-label="Vul hier uw huisnummer in. Dit is een verplicht veld">
+                </section>
+                <label for="woonplaats" class="label-required">Woonplaats</label>
+                <input id="woonplaats" class="input-required" type="text" maxlength="40" aria-label="Vul hier uw woonplaats in. Dit is een verplicht veld">
+            </section>
+            <section>
+                <label for="telefoonnummer" class="label-required">Telefoonnummer</label>
+                <input id="telefoonnummer" class="input-required" type="text" maxlength="12" aria-label="Vul hier uw telefoonnummer in. Dit is een verplicht veld">
+                <label for="e-mailadres" class="label-required">E-mailadres</label>
+                <input id="e-mailadres" class="input-required" type="email" maxlength="50" aria-label="Vul hier uw E-mailadres in. Dit is een verplicht veld">
+            </section>
+
+            <h2 class="form-title">Verblijf Informatie</h2>
+            <section>
+                <label for="volwassenen" class="label-required">Aantal Volwassenen</label>
+                <input id="volwassenen" class="input-required" type="number" maxlength="3" aria-label="Vul hier het aantal volwassen in die verblijven op de camping. Dit is een verplicht veld">
+                <labe for="kinderen"l>Aantal Kinderen</label>
+                <input id="kinderen" type="number" maxlength="3" aria-label="Vul hier het aantal kinderen in die verblijven op de camping">
+                <labe for="huisdieren"l>Aantal Huisdieren</label>
+                <input id="huisdieren" type="number" maxlength="3" aria-label="Vul hier het aantal huisdieren in die verblijven op de camping. Dit is een verplicht veld">
+            </section>
+            <section>
+                <label for="auto" class="label-required">Aantal Auto's</label>
+                <input id="auto" id="js--amountCars" class="input-required" type="number" maxlength="3" aria-label="Vul hier het aantal auto's om die u meeneemt naar de camping. Dit is een verplicht veld">
+                <label for="js--licencePlate">Kenteken Auto</label>
+                <input id="js--licencePlate" type="text" maxlength="10" aria-label="Vul hier een kenteken in van één van de auto's die u meeneemt. Dit is een verplicht veld als u minimaal één auto meeneemnt">
+                <label for="campingplek" class="label-required">Soort Campingplek</label>
+                <select id="canpingplek" class="input-required" name="campingplace" aria-label="Selecteer hier een campingplaats optie. Dit is een verplicht veld">
+                    <option value="">Kies een optie</option>
+                    <option value="standaard">Standaard - (80 m2)</option>
+                    <option value="comfort">Comfort - (100 m2)</option>
+                    <option value="luxe">Luxe - (120 m2)</option>
+                </select>
+            </section>
+            <section>
+                <label for="aankomst" class="label-required">Aankomst Datum</label>
+                <input id="aankomst" class="input-required" type="date" maxlength="10" aria-label="Vul hier uw aankomst datum in. Dit is een verplicht veld">
+            </section>
+            <section>
+                <label for="vertrek" class="label-required">Vertrek Datum</label>
+                <input id="vertrek" class="input-required" type="date" maxlength="10" aria-label="Vul hier uw vertrek datum in. Dit is een verplicht veld">
+            </section>
+
+
+            <h2 class="form-title">Faciliteit Informatie</h2>
+            <p class="description">Kies van welke faciliteiten u gebruik wilt maken.</p>
+            <section class="primary-facility">
+                <input class="facility-checkbox" type="checkbox" id="water" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van een waterkraan">
+                <label class="facility-image" for="water">
+                    <img src="images/water.jpg">
+                    <p>Water aansuiting</p>
+                </label>
+            </section>
+            <section class="primary-facility">
+                <input id="" class="facility-checkbox" type="checkbox" id="electricity" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van elektriciteit. 10 Ampére">
+                <label class="facility-image" for="electricity">
+                    <img src="images/stroom.jpg">
+                    <p>Elektriciteit 10 Ampére</p>
+                </label>
+            </section>
+
+            <h2 class="form-title">Extra faciliteiten/intresses</h2>
+            <p class="description">Kies van welke faciliteiten u extra wilt toevoegen. Hier worden extra kosten in rekening gebracht.</p>
+            <section class="facilities">
+                <input class="facility-checkbox" type="checkbox" id="parkeerplaats" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van een parkeerplek bij uw campingplaats. Dit kost 5 euro extra">
+                <label class="facility-image" for="parkeerplaats">
+                    <img src="images/parkeerplaats.jpg">
+                    <p>Parkeerplaats naast tent €5,-</p>
+                </label>
+
+                <input class="facility-checkbox" type="checkbox" id="zwembad" aria-label="Selecteer dit item als u op de camping een zwembadpasje wilt. Dit kost 5 euro extra per stuk">
+                <label class="facility-image" for="zwembad">
+                    <img src="images/zwembad.jpg">
+                    <p>Zwembadpasjes €5,- per stuk</p>
+                </label>
+
+                <input class="facility-checkbox" type="checkbox" id="wifi" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van Wi-Fi. Dit kost 10 euro extra">
+                <label class="facility-image" for="wifi">
+                    <img src="images/wifi.jpg">
+                    <p>Wi-Fi bij campeerplek €10,-</p>
+                </label>
+
+                <input class="facility-checkbox" type="checkbox" id="tv" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van een televisie. Dit kost 10 euro extra">
+                <label class="facility-image" for="tv">
+                    <img src="images/tv.jpg">
+                    <p>Televisie bij campeerplek €10,-</p>
+                </label>
+
+                <input class="facility-checkbox" type="checkbox" id="koelkast" aria-label="Selecteer dit item als u op uw campingplek gebruik wilt maken van een koelkast. Dit kost 5 euro extra per dag">
+                <label class="facility-image" for="koelkast">
+                    <img src="images/koelkast.jpg">
+                    <p>Koelkast bij campeerplek €5,- per dag</p>
+                </label>
+
+                <input class="facility-checkbox" type="checkbox" id="kaart" aria-label="Selecteer dit item als u op uw zelf wilt kiezen waar u op de camping wilt gaan staan. Dit kost 25 euro extra">
+                <label class="facility-image" for="kaart">
+                    <img src="images/kaart.jpg">
+                    <p>Zelf campeerplek kiezen €25,-</p>
+                </label>
+            </section>
+
+
+            <input type="submit" value="Campingplaats Reserveren" aria-label="Selecteer deze knop als u alles van het reservatie formulier heeft ingevuld en u wilt reserveren">
+
+        </form>
+    </main>
+    <footer>
+        <nav class="footer-navigation">
+            <a href="#">Home</a>
+            <a href="#">Accommodaties</a>
+            <a href="#">Beschikbaarheid</a>
+            <a href="#">Omgeving</a>
+            <a href="#">Contact</a>
+            <a href="#">FAQ/Vragen</a>
+            <a href="#">Info</a>
+        </nav>
+        <p>2022 - Nils Gerhard s1127500</p>
+    </footer>
+</body>
+</html>
